@@ -1,92 +1,89 @@
 ﻿
 # Introduction
 
-Voici ma liste des paramètres à modifier dans le menu about:config de Firefox.
-J'ai à l'origine créé cette liste pour me souvenir de quoi modifier lorsque je dois réinstaller Firefox.
-Certaines personnes ayant été intéressées je l'ai diffusée par la suite sous format d'un fichier texte.
-Ce mode de diffusion n'étant absolument pas pratique j'ai décidé de mettre cette liste sur GitHub.
-Le but est aussi de recevoir des contributions et de discuter de ces paramètres.
+Here is my list of settings to change in the about:config menu of Firefox.
+I originally created this list to remember what to change when I need to reinstall Firefox.
+Some people have been interested and I've distributed it afterwards as a text file.
+This way of diffusion being absolutely not practical I decided to put this list on GitHub.
+The aim is also to receive contributions and discuss these parameters.
 
-**Donc n'hésitez pas à contribuer, en ouvrant par exemple une issue.**
+# Settings 
 
-# Paramètres 
+## Privacy and security
 
+### Deactivate Safe Browsing
 
-## Vie privée et sécurité
-
-### Désactiver le Safe Browsing
-
-| Attribut | Valeur | Description |
+| Attribute | Value | Description |
 | :-: | :-: | --- |
-| `browser.safebrowsing.malware.enabled`          | **false** | Désactive le safebrowsing, fourni par Google.   |
-| `browser.safebrowsing.phishing.enabled`         | **false** | Désactive le safebrowsing.                      |
-| `browser.safebrowsing.blockedURIs.enabled`         | **false** | Désactive le safebrowsing.                      |
-| `browser.safebrowsing.downloads.remote.enabled` | **false** | Désactive la mise à jour des listes de blocage. |
-| `browser.safebrowsing.provider.google.updateURL` | **blanc** | Désactive la mise à jour des listes de blocage. |
-| `browser.safebrowsing.provider.google4.updateURL` | **blanc** | Désactive la mise à jour des listes de blocage. |
-| `browser.safebrowsing.provider.google4.dataSharingURL` | **blanc** | Désactive le partage de données. |
-| `browser.safebrowsing.provider.google4.gethashURL` | **blanc** | Désactive le partage de données. |
+| `browser.safebrowsing.malware.enabled`          | **false** | Disables safebrowsing, provided by Google.   |
+| `browser.safebrowsing.phishing.enabled`         | **false** | Disables safebrowsing.                      |
+| `browser.safebrowsing.blockedURIs.enabled`         | **false** | Disables safebrowsing.                      |
+| `browser.safebrowsing.downloads.remote.enabled` | **false** | Disables the updating of block lists. |
+| `browser.safebrowsing.provider.google.updateURL` | **empty** | Disables the updating of block lists. |
+| `browser.safebrowsing.provider.google4.updateURL` | **empty** | Disables the updating of block lists. |
+| `browser.safebrowsing.provider.google4.dataSharingURL` | **empty** | Disables data sharing. |
+| `browser.safebrowsing.provider.google4.gethashURL` | **empty** | Disables data sharing. |
 
-### Gestion du referer
+### Referer management
 
-| Attribut | Valeur | Description |
+| Attribut | value | Description |
 | :-: | :-: | --- |
-| `network.http.referer.spoofSource`           | **true** | Envoie comme referer le site que vous visitez, si vous visitez mozilla.org, Firefox enverra comme referer mozilla.org. |
+| `network.http.referer.spoofSource`           | **true** | Send as referer the site you are visiting, if you visit mozilla.org, Firefox will send as referer mozilla.org. |
 
-### Désactiver le préchargement
+### Deactivate preloading
 
-| Attribut | Valeur | Description |
+| Attribute | Value | Description |
 | :-: | :-: | --- |
-| `network.dns.disablePrefetch`               | **true**  | Désactive le préchargement DNS des liens, si vous avez confiance en votre serveur DNS ne désactivez pas cette option utile à l'amélioration des performances. |
-| `network.prefetch-next`                     | **false** | Désactive le préchargement des pages. |
-| `browser.urlbar.speculativeConnect.enabled` | **false** | Désactive le préchargement dans la barre « intelligente » de Firefox. |
-| `network.http.speculative-parallel-limit`   | **0**     | Désactive le préchargement. |
+| `network.dns.disablePrefetch`               | **true**  | Disable DNS preloading of links, if you trust your DNS server do not disable this useful option to improve performance. |
+| `network.prefetch-next`                     | **false** | Disables page preloading. |
+| `browser.urlbar.speculativeConnect.enabled` | **false** | Disables preloading in the Firefox "smart" bar. |
+| `network.http.speculative-parallel-limit`   | **0**     | Disables preloading. |
 
-### Désactiver la télémétrie
+### Deactivate telemetry
 
-Tapez `telemetry` dans la barre de recherche, supprimez tous les liens et passez tout à `false`.
+Type `telemetry` in the search bar, remove all links and switch everything to `false`.
 
-| Attribut | Valeur | Description |
+| Attribute | Value | Description |
 | :-: | :-: | --- |
-| `toolkit.telemetry.enabled` | **false** | Désactive la télémétrie. |
-| `toolkit.telemetry.server` | **blanc** | Désactive la télémétrie. |
-| `dom.ipc.plugins.flash.subprocess.crashreporter.enabled` | **false** | Désactive la télémétrie. |
-| `app.normandy.enabled`                                   | **false** | Désactive la télémétrie. |
-| `app.normandy.first_run`                                 | **false** | Désactive la télémétrie. |
-| `app.normandy.api_url`                                   | **blanc** | Désactive la télémétrie. |
-| `beacon.enabled`                                         | **false** | Désactive la télémétrie. |
+| `toolkit.telemetry.enabled` | **false** | Deactivate telemetry. |
+| `toolkit.telemetry.server` | **Empty** | DDeactivate telemetry. |
+| `dom.ipc.plugins.flash.subprocess.crashreporter.enabled` | **false** | Deactivate telemetry. |
+| `app.normandy.enabled`                                   | **false** | Deactivate telemetry. |
+| `app.normandy.first_run`                                 | **false** | Deactivate telemetry. |
+| `app.normandy.api_url`                                   | **empty** | Deactivate telemetry. |
+| `beacon.enabled`                                         | **false** | Deactivate telemetry. |
 
-### Désactiver la géolocalisation
+### Deactivate geolocation
 
 
-| Attribut | Valeur | Description |
+| Attribut | value | Description |
 | :-: | :-: | --- |
-| `geo.enabled`              | **false** | Désactive la géolocalisation. |
-| `geo.wifi.uri`             | **blanc** | Désactive la géolocalisation via énumération des points Wi-Fi. |
-| `geo.provider.network.url` | **blanc** | Désactive la géolocalisation. |
+| `geo.enabled`              | **false** | Deactivate geolocation. |
+| `geo.wifi.uri`             | **empty** | Deactivates the geolocation through Wi-Fi point enumeration. |
+| `geo.provider.network.url` | **empty** | Deactivate geolocation. |
 
-### Désactiver les notifications push
-
-
-Les notifications push permettent aux sites de vous envoyer des notifications même s'ils ne sont pas ouverts, si vous les y autorisez. Pour ce faire Mozilla utilise ses serveurs. Cela peut poser des problèmes de confidentialité.
+### Disable push notifications
 
 
-| Attribut | Valeur |
+Push notifications allow sites to send you notifications even when they are not open, if you allow them to do so. Mozilla uses its servers to do this. This can raise privacy concerns.
+
+
+| Attribute | Value |
 | :-: | :-: |
 | `dom.push.connection.enabled` | **false** |
 | `dom.push.enabled`            | **false** |
-| `dom.push.serverURL`          | **blanc**  |
+| `dom.push.serverURL`          | **empty**  |
    
-### Autres 
+### Other 
 
-| Attribut | Valeur | Description |
+| Attribute | Value | Description |
 | :-: | :-: | --- |
-| `security.OCSP.enabled` | **0** | Désactive l'[OCSP](https://fr.wikipedia.org/wiki/Online_Certificate_Status_Protocol). |
-| `browser.cache.offline.enable` | **false** | Désactive le cache hors-ligne, c'est pas terrible d'autoriser les sites à enregistrer tout et n'importe quoi sur votre ordi. |
-| `browser.cache.offline.capacity` | **0** | Désactive le cache hors-ligne. |
-| `extensions.pocket.enabled` | **false** | Désactive pocket. Si vous ne vous en servez pas autant le désactiver. |
-| `extensions.pocket.api` | **blanc** | Désactive pocket.
-| `extensions.pocket.site` | **blanc** | Désactive pocket. |
+| `security.OCSP.enabled` | **0** | Disable [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol). |
+| `browser.cache.offline.enable` | **false** | Disable the offline cache, it's not a good idea to allow sites to save anything on your computer. |
+| `browser.cache.offline.capacity` | **0** | Deactivates the offline cache. |
+| `extensions.pocket.enabled` | **false** | Deactivates pocket. If you don't use it, deactivate it. |
+| `extensions.pocket.api` | **empty** | Deactivates pocket.
+| `extensions.pocket.site` | **empty** | Deactivates pocket. |
 | `browser.send_pings` | **false** | Désactive le pistage des cliques. |
 | `browser.send_pings.max_per_link` | **0** | Autorise 0 envoie de notification lors d'un clic sur la page. |
 | `dom.battery.enabled` | **false** | Empêche les sites de voir l'état de votre batterie. |
