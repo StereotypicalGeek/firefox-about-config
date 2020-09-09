@@ -93,7 +93,7 @@ Push notifications allow sites to send you notifications even when they are not 
 | `network.captive-portal-service.enabled` | **false** | Deactivates the captive portal search. This is used, for example, to connect to public Wi-Fi networks. |
 | `captivedetect.canonicalURL` | **empty** | Disables the search for captive portals. |
 | `layout.css.visited_links_enabled` | **false** |[Too long to explain](https://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/).|
-| `device.sensors.enabled` | **false** | |
+| `device.sensors.enabled` | **false** | Deactivates sensors |
 | `browser.newtabpage.activity-stream.feeds.snippets` | **false** | Disables the display of Mozilla snippets. Firefox contacts Mozilla's servers to display them. |
 | `privacy.firstparty.isolate` | **true** | Isolates each of your tabs. |
 | `network.IDN_show_punycode` | **true** | Some links contain unicode characters. This gives greater possibilities for phishing. These unicode characters are encoded with the "punycode" code. Enabling this setting forces Firefox to display the punycode rather than the unicode character. |
