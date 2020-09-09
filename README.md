@@ -46,7 +46,7 @@ Type `telemetry` in the search bar, remove all links and switch everything to `f
 | Attribute | Value | Description |
 | :-: | :-: | --- |
 | `toolkit.telemetry.enabled` | **false** | Deactivate telemetry. |
-| `toolkit.telemetry.server` | **Empty** | DDeactivate telemetry. |
+| `toolkit.telemetry.server` | **Empty** | Deactivate telemetry. |
 | `dom.ipc.plugins.flash.subprocess.crashreporter.enabled` | **false** | Deactivate telemetry. |
 | `app.normandy.enabled`                                   | **false** | Deactivate telemetry. |
 | `app.normandy.first_run`                                 | **false** | Deactivate telemetry. |
@@ -84,54 +84,56 @@ Push notifications allow sites to send you notifications even when they are not 
 | `extensions.pocket.enabled` | **false** | Deactivates pocket. If you don't use it, deactivate it. |
 | `extensions.pocket.api` | **empty** | Deactivates pocket.
 | `extensions.pocket.site` | **empty** | Deactivates pocket. |
-| `browser.send_pings` | **false** | Désactive le pistage des cliques. |
-| `browser.send_pings.max_per_link` | **0** | Autorise 0 envoie de notification lors d'un clic sur la page. |
-| `dom.battery.enabled` | **false** | Empêche les sites de voir l'état de votre batterie. |
-| `dom.event.clipboardevents.enabled` | **false** | Empêche les sites de savoir lorsque vous coper un élément dans le presse-papier. |
-| `media.navigator.enabled`| **false** | Empêche les sites de pister l'état du micro et de la caméra. |
-| `webgl.disabled` | **true** | WebGL pourrait être source de problèmes de sécurité. Peut casser certains sites. |
-| `network.captive-portal-service.enabled` | **false** | Désactive la recherche de portail captif. C'est utilisé notamment pour se connecter aux réseaux Wi-Fi publics. |
-| `captivedetect.canonicalURL` | **blanc** | Désactive la recherche de portails captifs. |
-| `layout.css.visited_links_enabled` | **false** |[Trop long à expliquer](https://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/).|
+| `browser.send_pings` | **false** | Disables click tracking. |
+| `browser.send_pings.max_per_link` | **0** | Deactivate notification when you click |
+| `dom.battery.enabled` | **false** | Prevents sites from seeing the status of your battery. |
+| `dom.event.clipboardevents.enabled` | **false** | Prevents sites from knowing when you copy an item to the clipboard. |
+| `media.navigator.enabled`| **false** | Prevents sites from tracking the state of the microphone and camera. |
+| `webgl.disabled` | **true** | WebGL could be a source of security problems. May break some sites. |
+| `network.captive-portal-service.enabled` | **false** | Deactivates the captive portal search. This is used, for example, to connect to public Wi-Fi networks. |
+| `captivedetect.canonicalURL` | **empty** | Disables the search for captive portals. |
+| `layout.css.visited_links_enabled` | **false** |[Too long to explain](https://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/).|
 | `device.sensors.enabled` | **false** | |
-| `browser.newtabpage.activity-stream.feeds.snippets` | **false** | Désactive l'affichage des snippets, ou « brèves » en Français, de Mozilla. Firefox contacte les serveurs de Mozilla pour les afficher. |
-| `privacy.firstparty.isolate` | **true** | Isole chacun de vos onglets. |
-| `network.IDN_show_punycode` | **true** | Certains liens contiennent des caractères unicodes. Ceci donne de plus grandes possibilités pour l'hameçonnage. Ces caractères unicode sont encodés avec le code « punycode ». Activer ce paramètres force Firefox à afficher le punycode plutôt que le caractère unicode. |
-| `media.peerconnection.enabled` | **false** | Désactive WebRTC qui peut poser des problèmes de sécurité et de vie privée, comme révéler votre adresse IP. |
-| `signon.autofillForms` | **false** | Désactive le remplissage automatique des identifiants. |
-| `network.security.esni.enabled` | **true** | Active la prise en charge de l'[ESNI](https://lafibre.info/cryptographie/encrypted-sni/). |
+| `browser.newtabpage.activity-stream.feeds.snippets` | **false** | Disables the display of Mozilla snippets. Firefox contacts Mozilla's servers to display them. |
+| `privacy.firstparty.isolate` | **true** | Isolates each of your tabs. |
+| `network.IDN_show_punycode` | **true** | Some links contain unicode characters. This gives greater possibilities for phishing. These unicode characters are encoded with the "punycode" code. Enabling this setting forces Firefox to display the punycode rather than the unicode character. |
+| `media.peerconnection.enabled` | **false** | Disables WebRTC which may pose security and privacy concerns, such as revealing your IP address. |
+| `signon.autofillForms` | **false** | Deactivates the automatic filling in of identifiers. |
+| `network.security.esni.enabled` | **true** | Activates ESNI support, the article is in french, I haven't found such a detailed one in english. You can use Deepl.com to translate it.(https://lafibre.info/cryptographie/encrypted-sni/). |
 
 ## Performances
 
-**Je dois mener des investigations plus poussées sur l'impact réel de la modification de ces paramètres ; je le laisses dans ce guide à titre informatif mais si vous ne savez pas ce que vous faites ne les modifiez pas. Merci. Bisous.**
+**I need to investigate further the real impact of changing these parameters; I leave it in this guide for your information, but if you don't know what you are doing, don't change them. **
 
-| Attribut | Valeur | Description |
+| Attribute | Value | Description |
 | :-: | :-: | --- |
-| `browser.cache.memory.enable` | **true** | Active le cache mémoire (RAM). Pour tous les paramètres concernant le cache, pensez à activer le nettoyage automatique du cache à la fin de la session pour des raisons de confidentialité. Le mieux étant d'utiliser une extension comme cookies autodelete et d'activer le nettoyage automatique à la fermeture de l'onglet et au bout d'un intervalle d'une dizaine de secondes. |
-| `browser.cache.memory.capacity` | **512000** | Taille du cache mémoire (en octets, 512000 = 512 mo). Mettre -1 pour que Firefox gére automatiquement cette valeur en fonction de votre quantiter de mémoire. |
-| `browser.cache.memory.max_entry_size` | **-1** | Mettre -1 pour supprimer toute limite de taille. |
-| `browser.cache.disk.enable` | **true** | Autorise l'utilisation du cache disque. Pour des raisons de confidentialité désactiver le cache disque au profit du cache mémoire peut être une bonne chose ; cela permet de s'assurer qu'aucune donnée n'est enregistrée sur votre ordinateur à la fermeture de Firefox. |
-| `browser.cache.disk.capacity` | **512000** | Taille du cache disque. |
-| `network.dnsCacheEntries` | **4000** | Nombre d'entrées du cache DNS. Pour des raisons de confidentialité, si quelqu'un peut avoir accès à votre ordinateur laisser le paramètre par défaut. |
-| `network.dnsCacheExpiration` | **43200** | Temps avant expiration, nettoyage, d'une entrée présente dans le cache DNS (en secondes). Pour des raisons de confidentialité, si quelqu'un peut avoir accès à votre ordinateur laissez le nombre par défaut. |
-| `network.dnsCacheExpirationGracePeriod` | **43200** | Mettre la même valeur que pour `network.dnsCacheExpiration`. |
-| `browser.sessionstore.interval` | **60000** | Firefox sauvegarde toutes les 15 secondes vos onglets et leurs données. Ça lui permet en cas de plantage de restaurer votre session. Ici on fait passer de une sauvegarde toutes les 15 secondes (15 000 ms) à une sauvegarde toutes les 60 secondes (60 000 ms). Une sauvegarde par minute c'est largement suffisant et ça permet de diminuer les accès au disque fait par Firefox. |
+| `browser.cache.memory.enable` | **true** | Activates the memory cache (RAM). For all cache settings, remember to enable automatic cache cleaning at the end of the session for privacy reasons. The best way to do this is to use an extension such as "autodelete cookie" and to activate the automatic cleaning when the tab is closed and after an interval of about ten seconds. |
+| `browser.cache.memory.capacity` | **512000** | Memory cache size (in bytes, 512000 = 512 MB). Set -1 so that Firefox automatically manages this value according to your memory size. |
+| `browser.cache.memory.max_entry_size` | **-1** | Set -1 to remove any size limit. |
+| `browser.cache.disk.enable` | **true** | Allows the use of the disk cache. For confidentiality reasons, disabling the disk cache in favour of the memory cache may be a good thing; it ensures that no data is saved on your computer when you close Firefox. |
+| `browser.cache.disk.capacity` | **512000** | Disk cache size. |
+| `network.dnsCacheEntries` | **4000** | Number of entries in the DNS cache. For privacy reasons, if someone can access your computer leave the default setting. |
+| `network.dnsCacheExpiration` | **43200** | Time before expiration, cleaning, of an entry in the DNS cache (in seconds). For confidentiality reasons, if someone can access your computer leave the default number. |
+| `network.dnsCacheExpirationGracePeriod` | **43200** | Set the same value as for `network.dnsCacheExpiration`. |
+| `browser.sessionstore.interval` | **60000** | Firefox backs up your tabs and their data every 15 seconds. This allows it to restore your session in the event of a crash. It changes from 15 seconds to a backup every 60 seconds (60 000 ms). One backup per minute is more than enough and it allows to reduce the accesses to the disk made by Firefox. |
 
-## Pratique
+## Utility
 
-| Attribut | Valeur | Description |
+| Attribute | Value | Description |
 | :-: | :-: | --- |
-| `browser.tabs.closeWindowWithLastTab` | **false** | Désactive la fermeture de Firefox lorsque vous fermez le dernier onglet. |
-| `browser.backspace_action` | **1** | La touche retour arrière de votre clavier ne vous fera plus revenir au lien précédent. |
-| `security.secure_connection_icon_color_gray` | **false** | Remet le cadenas de la barre d'adresse en vert plutôt qu'en gris. Parce que c'est plus joli :-) |
-| `accessibility.blockautorefresh` | **true** | Bloque le rafraichissement automatique de la page. |
-| `dom.event.contextmenu.enabled` | **false** | Empêche les sites de bloquer l'utilisation du clic-droit. |
-| `browser.tabs.allowTabDetach` | **false** | Désactive la possibilité de déplacer un onglet vers une nouvelle fenêtre en tirant dessus. |
-| `ui.SpellCheckerUnderlineStyle` | **3** | Créez cette entrée dans le about:config et mettez le nombre 3 afin que Firefox souligne les mots mal orthographiés au lieu de dessiner une petite vaguelette rouge. [Un autre chiffre donnera une autre forme](http://kb.mozillazine.org/Ui.SpellCheckerUnderlineStyle). |
-| `full-screen-api.warning.timeout` | **0** | Firefox affiche un popup lorsque vous passez en plein écran. Passer ce paramètre à 0 permet de ne plus afficher ce paramètre. |
-| `browser.preferences.experimental` | **true** | Active l'onglet « Expérimental » dans les paramètres de Firefox. |
+| `browser.tabs.closeWindowWithLastTab` | **false** | Disables the closing of Firefox when you close the last tab. |
+| `browser.backspace_action` | **1** | The backspace key on your keyboard will no longer take you back to the previous link. |
+| `security.secure_connection_icon_color_gray` | **false** | Switch the padlock on the address bar back to green instead of grey. Because it's prettier :-) |
+| `accessibility.blockautorefresh` | **true** | Blocks the automatic page refresh. |
+| `dom.event.contextmenu.enabled` | **false** | Prevents sites from blocking right-click use. |
+| `browser.tabs.allowTabDetach` | **false** | Disables the ability to move a tab to a new window by dragging it. |
+| `ui.SpellCheckerUnderlineStyle` | **3** | Create this entry in about:config and put the number 3 so that Firefox underlines misspelled words instead of drawing a small red wave. Another number will give a different shape](http://kb.mozillazine.org/Ui.SpellCheckerUnderlineStyle). |
+| `full-screen-api.warning.timeout` | **0** | Firefox displays a popup when you switch to full screen. Changing this setting to 0 will cause this setting to no longer be displayed. |
+| `browser.preferences.experimental` | **true** | Activates the "Experimental" tab in the Firefox settings. |
 
 # Sources
+
+https://github.com/kaliangel/firefox-about-config
 
 https://www.dsfc.net/logiciel-libre/firefox-logiciel-libre/firefox-plus-rapide-respectueux-vie-privee/#Utiliser_la_memoire
 
