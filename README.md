@@ -11,6 +11,8 @@ The aim is also to receive contributions and discuss these parameters.
 
 ## Privacy and security
 
+To access these setting type about:config in the Firefox url bar. This do not work for Chromium based browsers such as Google Chrome, Brave, Vivaldi, Opera or Edge
+
 ### Deactivate Safe Browsing
 
 | Attribute | Value | Description |
